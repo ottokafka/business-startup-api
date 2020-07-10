@@ -1,4 +1,4 @@
-# A MERN stack boilerplate for startup.
+# boilerplate for startup.
 
 # Get Started developing
 
@@ -12,21 +12,17 @@ Start the development environment
 npm run dev
 ```
 
-starts the express server and React js at the same time.
+starts the express server
 
 # Backend
 
 Node.js, Express.js Mongodb
 
-# The Front End
-
-React.js Redux
-
 # Why use this
 
 This code base has a robust backend written in Node.js. Node.js is easy to write and understand by frontend developers. Although, a Node.js server can't compete with Golang as a backend server in terms of speed and efficiency. In the case that you just need to get a phototype up and running asap and only have a Frontend engineer then Node.js is the way to go.
 
-As for the Frontend written in React.js. Its a clear winner in terms of flexibility and popularity compared to other frameworks. So there lots of examples and tools to use to get a project up and going.
+Its a clear winner in terms of flexibility and popularity compared to other frameworks. So there lots of examples and tools to use to get a project up and going.
 
 ### Images of the project
 
@@ -49,10 +45,6 @@ Add availability
 <img src="https://user-images.githubusercontent.com/21117852/77253732-2384f900-6c97-11ea-8d81-fa31f7dd1ea1.png" alt="pic" width="300">
 <img src="https://user-images.githubusercontent.com/21117852/77253745-3c8daa00-6c97-11ea-9078-5f56fb55cb4d.png" alt="pic" width="300">
 
-Services
-
-<img src="https://user-images.githubusercontent.com/21117852/77253750-529b6a80-6c97-11ea-9273-e76e3e92b4cb.png" alt="pic" width="300">
-
 User dashboard
 
 <img src="https://user-images.githubusercontent.com/21117852/77253761-6d6ddf00-6c97-11ea-9320-b5252e8022b1.png" alt="pic" width="300">
@@ -64,7 +56,3 @@ Search for business
 Business search results
 
 <img src="https://user-images.githubusercontent.com/21117852/77253775-94c4ac00-6c97-11ea-916c-dae16662efa3.png" alt="pic" width="300">
-
-More info on a business
-
-<img src="https://user-images.githubusercontent.com/21117852/77253782-a3ab5e80-6c97-11ea-8881-06cf64d27142.png" alt="pic" width="300">

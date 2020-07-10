@@ -50,11 +50,11 @@ wss.on("connection", (ws, request) => {
     //             var myNotification = {
     //                 token: user.firebaseToken,
     //                 notification: {
-    //                     title: "chatBarber",
+    //                     title: "chatBusiness",
     //                     body: `${businessInfo.company} wrote: ${json.message}`,
     //                 },
     //                 data: {
-    //                     title: "chatBarber",
+    //                     title: "chatBusiness",
     //                     msg: `${json.message}`,
     //                     // send business id to user to auto start chat screen
     //                     businessID: json.businessID,
@@ -136,7 +136,7 @@ wss.on("connection", (ws, request) => {
       }
     });
     console.log(`[WebSocket] Message ${message} was received`);
-    // Barber send msg to User: Run the api route when msg is recieved and save to mongodb and send notification through firebase
+    //  send msg to User: Run the api route when msg is recieved and save to mongodb and send notification through firebase
     // -------- Notifications from Business to user from firebase cloud------------
   });
 

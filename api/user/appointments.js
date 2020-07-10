@@ -19,7 +19,7 @@ router.post("/chats", async (req, res) => {
   res.json(chats);
 });
 
-// check appointments for barber
+// check appointments for Business
 // @route    get api/appointments/business
 // @desc     Check the appointment time
 // @access   Private
@@ -99,7 +99,7 @@ router.put("/business", tokenBusiness, async (req, res) => {
     //     body:
     //       accept == true
     //         ? `Appointment accepted at ${timeAmPm}`
-    //         : `Barber is busy at  ${timeAmPm}`,
+    //         : ` is busy at  ${timeAmPm}`,
     //   },
     //   data: {
     //     title: "appointmentUser",

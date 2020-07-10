@@ -364,14 +364,14 @@ Content-Type: application/json
 }
 ### 
 
-post https://startup-barber.herokuapp.com/api/businessinfo/city
+post https://business-startup-api.herokuapp.com/api/businessinfo/city
 
 {
      "city": "sacramento"
 }
 ### 
 
-post https://startup-barber.herokuapp.com/api/loginBusiness
+post https://business-startup-api.herokuapp.com/api/loginBusiness
 Content-Type: application/json
 
 {
