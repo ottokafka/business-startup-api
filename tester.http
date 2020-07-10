@@ -1,0 +1,389 @@
+
+// User sign up
+post http://localhost:5000/api/registerUser
+Content-Type: application/json
+
+{
+    "name" : "sam",
+    "email": "samsmith11700@gmail.com",
+    "password": "123456"
+}
+### 
+
+// test new password
+POST http://34.71.166.221:5000/reset/c41c8c1c76ef7b82f8ad7b6aaee5a64dccadf4ff
+Content-Type: application/json
+
+{
+    "password": "qwertyuiop"
+}
+###
+
+// test rest password
+POST http://localhost:5000/reset/forget
+Content-Type: application/json
+
+{
+    "email": "samsmith11700@gmail.com"
+}
+###
+
+PUT http://localhost:5000/api/forget/user
+Content-Type: application/json
+tokenUser: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVlMWRlMWU0NmI0Nzg0MmQxMGMxNDc2In0sImlhdCI6MTU5MTg2MDc2NiwiZXhwIjoxMTU5MTg2MDc2NX0.Bl4cvPloA0NDR7GpIGgnicYrOBS0BGmYYA7Hiox0FMo
+
+{
+    "password": "dudess"
+}
+###
+
+
+// Quick business Creation 
+// Business registration 1
+POST http://localhost:5000/api/registerBusiness
+Content-Type: application/json
+
+{
+    "firstName" : "Tyler",
+    "lastName": "Tyler",
+    "email": "tyler@email.com",
+    "password": "123456",
+    "phoneNumber": "123456789"
+}
+###
+
+// Bussiness Location
+POST http://localhost:5000/api/businessinfo
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlZGFlM2U3YjhhOWJkNGFiY2UxYmI3ZiJ9LCJpYXQiOjE1OTE0MDM0OTUsImV4cCI6MTE1OTE0MDM0OTR9.R0eoWWM__BqYCbc619FSZ8eQzTsGwOYhFdIi9YYUleQ
+{
+"company":"Tylers",
+"address": "333 2nd Ave",
+"city": "sacramento",
+"state": "california",
+"zip": "95201"
+}
+
+
+// Accept a booking
+PUT http://localhost:5000/api/appointments/business
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlYWMyMmY0YThiOThkMzA2MmMzOGIwNyJ9LCJpYXQiOjE1ODgzMzk0NDQsImV4cCI6MTU5MTkzOTQ0NH0.8xpJIq7F7cXcl-SCK_-fvPZWr3AJpU0c-ZZaKQmMJP4
+
+{
+    "user": "5eacbab27789335e63250e55", 
+    "accept": true,
+    "time": "17:00",
+    "date": "2020-05-02"
+}
+
+###
+
+// test POST api
+POST http://localhost:5000/api/loginBusiness
+Content-Type: application/json
+
+{
+    "firstName" : "Otto",
+    "lastName": "Kafka"
+}
+###
+
+
+
+// Business registration 1
+POST http://localhost:5000/api/registerBusiness
+Content-Type: application/json
+
+{
+    "firstName" : "steve",
+    "lastName": "steve",
+    "email": "steve@email.com",
+    "password": "123456",
+    "phoneNumber": "123456789"
+}
+###
+
+POST http://150.136.56.131:5000/api/registerBusiness
+Content-Type: application/json
+
+{
+    "firstName" : "g",
+    "lastName": "g",
+    "email": "g@email.com",
+    "password": "1",
+    "phoneNumber": "123456789"
+}
+###
+
+// test the server register
+POST http://150.136.56.131:5000/api/registerBusiness
+Content-Type: application/json
+
+{
+    "firstName" : "John",
+    "lastName": "Mick",
+    "email": "test1@email.com",
+    "password": "123456",
+    "phoneNumber": "123456789"
+}
+###
+
+
+POST http://localhost:5000/api/registerBusiness
+Content-Type: application/json
+
+{
+    "firstName" : "John",
+    "lastName": "Mick",
+    "email": "john5@email.com",
+    "password": "123456",
+    "phoneNumber": "123456789"
+}
+###
+
+// Business login 
+POST http://localhost:5000/api/loginBusiness
+Content-Type: application/json
+
+{
+     "email": "test1@email.com",
+     "password": "123456"
+}
+###
+
+
+
+// BussinessInfo  route
+POST http://localhost:5000/api/businessinfo
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlYWMyMmY0YThiOThkMzA2MmMzOGIwNyJ9LCJpYXQiOjE1ODgzMzk0NDQsImV4cCI6MTU5MTkzOTQ0NH0.8xpJIq7F7cXcl-SCK_-fvPZWr3AJpU0c-ZZaKQmMJP4
+
+{
+"company":"steve bro",
+"address": "999 West side",
+"city": "sacramento",
+"state": "california",
+"zip": "95201"
+}
+
+### 
+
+// Availability
+PUT http://localhost:5000/api/availability
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlYWMyMmY0YThiOThkMzA2MmMzOGIwNyJ9LCJpYXQiOjE1ODgzMzk0NDQsImV4cCI6MTU5MTkzOTQ0NH0.8xpJIq7F7cXcl-SCK_-fvPZWr3AJpU0c-ZZaKQmMJP4
+
+{
+      "day_of_week1": "monday",
+      "work1": true,
+      "start_time1": "2:00",
+      "end_time1": "24:00",
+      "start_lunch1": "13:00",
+      "end_lunch1": "13:00",
+      "day_of_week2": "tuesday",
+      "work2": true,
+      "start_time2": "8:00",
+      "end_time2": "22:00",
+      "start_lunch2": "13:00", 
+      "end_lunch2": "13:00",
+      "day_of_week3": "wednesday",
+      "work3": true,
+      "start_time3": "8:00",
+      "end_time3": "23:00",
+      "start_lunch3": "13:00",
+      "end_lunch3": "13:00",
+      "day_of_week4": "thursday",
+      "work4": true,
+      "start_time4": "7:00",
+      "end_time4": "22:00",
+      "start_lunch4": "13:00",
+      "end_lunch4": "13:00",
+      "day_of_week5": "friday",
+      "work5": true,
+      "start_time5": "8:00",
+      "end_time5": "22:00",
+      "start_lunch5": "13:00",
+      "end_lunch5": "13:00",
+      "day_of_week6": "saturday",
+      "work6": true,
+      "start_time6": "8:00",
+      "end_time6": "22:00",
+      "start_lunch6": "13:00",
+      "end_lunch6": "13:00",
+      "day_of_week7": "sunday",
+      "work7": false,
+      "start_time7": "8:00",
+      "end_time7": "23:00",
+      "start_lunch7": "13:00",
+      "end_lunch7": "23:00"
+}
+
+###
+
+// Availability
+PUT http://localhost:5000/api/bookings
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlODk5YjcxMjliM2M0MDAxNzMzNjkyYiJ9LCJpYXQiOjE1ODYwNzY1MjksImV4cCI6MTU4OTY3NjUyOX0.IPfTkbtIKyploZL-uG4GSiQ11HB27BazzGxqCmAj_Ig
+
+{
+
+}
+
+// Availability
+PUT http://150.136.56.131:5000/api/availability
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlNzM3ZjNlNTMwMjA2MDAxNzgyMDdhYSJ9LCJpYXQiOjE1ODUwOTcyOTYsImV4cCI6MTU4NTQ1NzI5Nn0.-x2VPOOLBD6XE06YA_WSFTENChYk_yHM6p5IO8nlwoQ
+
+{
+      "day_of_week1": "Monday",
+      "work1": "true",
+      "start_time1": "13:00",
+      "end_time1": "13:00",
+      "start_lunch1": "13:00",
+      "end_lunch1": "13:00"
+}
+
+###
+
+// Grab availability data from business
+GET http://localhost:5000/api/availability/work
+Content-Type: application/json
+x-auth-tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlNTEwNTRlMDEwNDAyNTIzNDUyNmIwZCJ9LCJpYXQiOjE1ODIzNjgwNzksImV4cCI6MTU4NTk2ODA3OX0.zR1akeuGqG9-q793Rb9fkdNH2Mw9KiON49U9hpXQyFs
+
+### 
+
+
+
+// Appointments: create a appointment with a business
+PUT http://localhost:5000/api/appointments
+Content-Type: application/json
+tokenUser: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU5NDQ1ZTYzZDE5YmNkNDhjNzVmNmFlIn0sImlhdCI6MTU4Njc3NTUyNiwiZXhwIjoxNTkwMzc1NTI2fQ.SHZhFJLMPLTzr2RVjrLPboIGUYEZa4ix7rkgoakmZ7s
+### 
+
+// checkAvailability test route
+// Id of business is used _id 
+GET http://localhost:5000/api/checkAvailability/5e95ae754049a00cec8e665f
+Content-Type: application/json
+### 
+
+// services for hairstyles and cost saving to db
+PUT http://localhost:5000/api/services
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlNmI3MDhlMWNhNzM2MDAxN2YyMWI3MCJ9LCJpYXQiOjE1ODQwOTk0NzAsImV4cCI6MTU4NzY5OTQ3MH0.iaLMXn-Sbhj3eO9sQgsfOoZTPyCBCgJBaGQgDuDAYlE
+
+{
+"lineUp":15,
+"fade": 15,
+"haircut": 20,
+"edgeUp": 20,
+"design": 25,
+"buzzCut": 20,
+"trim": 20,
+"neckTrim": 20,
+"extensionAddOn": 100,
+"braids": 150,
+"flatIron": 100,
+"updo": 120,
+"otherStyle": 120,
+"bangTrim": 40,
+"fullWeave": 50,
+"quickWeave":30,
+"sewInMaintenance":20,
+"allOverColor": 100,
+"bleachAndTone": 150,
+"hairTint": 100,
+"rootTouchUp": 150
+}
+###  
+
+//  Bussiness info all
+GET http://localhost:5000/api/businessinfo/all
+Content-Type: application/json
+
+### 
+
+//  Bussiness info by db :id
+GET http://localhost:5000/api/businessinfo/business/5e5bb9ed91a5a80a39cc8979
+Content-Type: application/json
+### 
+
+
+
+// Delete a Bussiness 
+DELETE  http://localhost:5000/api/businessinfo
+Content-Type: application/json
+x-auth-tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlNTEwNTRlMDEwNDAyNTIzNDUyNmIwZCJ9LCJpYXQiOjE1ODIzNjgwNzksImV4cCI6MTU4NTk2ODA3OX0.zR1akeuGqG9-q793Rb9fkdNH2Mw9KiON49U9hpXQyFs
+### 
+
+//  Bussiness me
+GET http://150.136.56.131:5000/api/businessinfo/me
+Content-Type: application/json
+tokenBusiness: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJidXNpbmVzcyI6eyJpZCI6IjVlNzM3ZjNlNTMwMjA2MDAxNzgyMDdhYSJ9LCJpYXQiOjE1ODUwOTcyOTYsImV4cCI6MTU4NTQ1NzI5Nn0.-x2VPOOLBD6XE06YA_WSFTENChYk_yHM6p5IO8nlwoQ
+
+### 
+//todo
+
+//  --------------Users -------------------- Users -------------------- Users
+
+
+post http://localhost:5000/api/registerUser
+Content-Type: application/json
+
+{
+    "name" : "sam",
+    "email": "samsmith11700@gmail.com",
+    "password": "123456"
+}
+### 
+post http://localhost:5000/api/loginUser
+Content-Type: application/json
+
+{
+    "email": "samsam2@email.com",
+    "password": "123456"
+}
+### 
+
+// search by zip code
+post http://localhost:5000/api/businessinfo/zip
+Content-Type: application/json
+
+{
+    "zip": "95209"
+}
+### 
+
+// search by city
+post http://localhost:5000/api/businessinfo/city
+Content-Type: application/json
+# tokenUser: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWU1ZjRlOTFjYjU3MGI2Y2QwNzFhZjE2In0sImlhdCI6MTU4MzMwNDMzNywiZXhwIjoxNTg2OTA0MzM3fQ.wJqP_fxqT36BV-1FqNGLx-ZhvLVWnKKqoXc7N9TnZGU
+
+{
+    "city": "sacramento"
+}
+### 
+
+post https://startup-barber.herokuapp.com/api/businessinfo/city
+
+{
+     "city": "sacramento"
+}
+### 
+
+post https://startup-barber.herokuapp.com/api/loginBusiness
+Content-Type: application/json
+
+{
+     "email": "n@email.com",
+     "password": "1"
+}
+### 
+
+
+
+GET http://150.136.56.131:5000/api/availability/test
+Content-Type: application/json
+
+### 
+

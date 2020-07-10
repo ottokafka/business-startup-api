@@ -1,0 +1,33 @@
+{
+  "name": "business-startup-api",
+  "version": "1.0.0",
+  "description": "Business-startup-api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "otto kafka",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0",
+    "mongoose": "^5.9.1",
+    "nodemailer": "^6.4.8",
+    "passport-jwt": "^4.0.0",
+    "uuid": "^7.0.0",
+    "ws": "^7.2.5"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
