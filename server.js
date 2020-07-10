@@ -49,7 +49,7 @@ app.use("/api/appointments", require("./api/user/appointments"));
 
 // Serve a static html page for reset password
 app.get("/reset/:token", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "client", "reset.html"));
+  res.sendFile(path.resolve(__dirname, "api", "reset.html"));
 });
 
 // use this static code line to serve on all hosting platforms ie ubuntu on aws, google cloud
