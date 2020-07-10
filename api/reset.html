@@ -1,78 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!-- <link rel="stylesheet" href="public/css/bootstrap.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <!-- <link rel="stylesheet" href="public/css/bootstrap.css" /> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Reset?</title>
+  </head>
 
+  <body>
+    <div class="container">
+      <h1>Password Reset</h1>
+    </div>
+    <form method="post" class="container">
+      <div class="form-group">
+        <label for="exampleInputPassword1">New Password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="New Password"
+          name="password"
+          id="new"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Confrim Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="confirm"
+          placeholder="Confirm Password"
+          id="confirm"
+        />
+      </div>
+      <button class="btn btn-primary" onclick="postPassword()">Submit</button>
+    </form>
+  </body>
+  <script>
+    // get values from inputs
+    // get url
 
-  <title>Reset?</title>
-</head>
+    function postPassword() {
+      var url = window.location.href;
+      console.log(url);
+      var newPass = document.getElementById("new").value;
+      var confirmPass = document.getElementById("confirm").value;
+      console.log(newPass);
 
-<body>
-  <div class="container">
-    <h1>Password Reset</h1>
-  </div>
-  <!-- <form method="post" class="container"> -->
-  <!-- <div class="form-group"> -->
-  <label for="exampleInputPassword1">New Password</label>
-  <input type="password" class="form-control" placeholder="New Password" , name='password' , id="new">
-  <!-- </div> -->
-  <!-- <div class="form-group"> -->
-  <label for="exampleInputPassword1">Confrim Password</label>
-  <input type="password" class="form-control" name="confirm" placeholder="Confirm Password" id="confirm">
-  <!-- </div> -->
-  <button class="btn btn-primary" onclick="postPassword()">Submit</button>
-  <!-- </form> -->
-</body>
-<script>
-  // get values from inputs
-  // get url 
+      if (newPass !== confirmPass) {
+        return alert("passwords dont match");
+      }
+      if (newPass == "") {
+        return alert("No password entered");
+      }
+      fetch(url, {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
 
-  function postPassword() {
-    var url = window.location.href;
-    console.log(url);
-    var newPass = document.getElementById("new").value;
-    var confirmPass = document.getElementById("confirm").value;
-    console.log(newPass);
-
-    if (newPass !== confirmPass) {
-      return alert("passwords dont match")
-    } if (newPass == "") {
-      return alert("No password entered")
-    }
-    fetch(url, {
-      method: "post",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-
-      //make sure to serialize your JSON body
-      body: JSON.stringify({
-        password: newPass,
+        //make sure to serialize your JSON body
+        body: JSON.stringify({
+          password: newPass,
+        }),
       })
-    }).then(response => response.json())
-      .then(data => {
-        console.log(data)
-        if (data == "success") {
-          alert("password successfully updated, open up the app and login")
-        }
-      });
-    // .then((response) => {
-    //   //do something awesome that makes the world a better place
-    //   console.log(response);
-    //   if (response == "success") {
-    //     alert("password successfully updated, open up the app and login")
-    //   }
-    // });
-    // alert("password successfully updated, open up the app and login")
-  }
-</script>
-
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          if (data == "success") {
+            alert("password successfully updated, open up the app and login");
+          }
+        });
+      // .then((response) => {
+      //   //do something awesome that makes the world a better place
+      //   console.log(response);
+      //   if (response == "success") {
+      //     alert("password successfully updated, open up the app and login")
+      //   }
+      // });
+      // alert("password successfully updated, open up the app and login")
+    }
+  </script>
 </html>

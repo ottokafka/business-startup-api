@@ -13,7 +13,7 @@ const connectDB = async () => {
   try {
     await mongoose.connect(
       // "mongodb://127.0.0.1:27017",
-      "mongodb://automan>:qwertyuiop1@ds115360.mlab.com:15360/startup-business-db",
+      "mongodb://automan:qwertyuiop1@ds115360.mlab.com:15360/startup-business-db",
       {
         useNewUrlParser: true,
         useCreateIndex: true,
