@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 // the websocketServer for the chat
-const websocketServer = require('./websocketServer');
+const websocketServer = require("./websocketServer");
 
 // Node module that allows to work with file and dir path
 const path = require("path");
@@ -12,8 +12,8 @@ const app = express();
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb://127.0.0.1:27017",
-      // "mongodb://mernstackdemo:mernstackdemo1@ds163850.mlab.com:63850/merndatabase",
+      // "mongodb://127.0.0.1:27017",
+      "mongodb://automan>:qwertyuiop1@ds115360.mlab.com:15360/startup-business-db",
       {
         useNewUrlParser: true,
         useCreateIndex: true,
@@ -28,8 +28,6 @@ const connectDB = async () => {
 };
 
 connectDB();
-
-
 
 // getting json from user
 app.use(express.json({ extended: false }));
@@ -50,7 +48,7 @@ app.use("/api/checkAvailability", require("./api/user/checkAvailability"));
 app.use("/api/appointments", require("./api/user/appointments"));
 
 // Serve a static html page for reset password
-app.get('/reset/:token', function (req, res) {
+app.get("/reset/:token", function (req, res) {
   res.sendFile(path.resolve(__dirname, "client", "reset.html"));
 });
 
