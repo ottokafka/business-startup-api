@@ -140,12 +140,12 @@ wss.on("connection", (ws, request) => {
     // -------- Notifications from Business to user from firebase cloud------------
   });
 
-  // ws.on('close', function () {
-  //     closeSocket();
-  // });
-  // process.on('SIGINT', function () {
-  //     console.log("Closing things");
-  //     closeSocket('Server has disconnected');
-  //     process.exit();
-  // });
+  ws.on("close", function () {
+    closeSocket();
+  });
+  process.on("SIGINT", function () {
+    console.log("Closing things");
+    closeSocket("Server has disconnected");
+    process.exit();
+  });
 });
